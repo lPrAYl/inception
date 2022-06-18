@@ -26,10 +26,9 @@ clean:
 	sudo docker volume prune -f
 	sudo docker ps -aq | xargs --no-run-if-empty docker stop
 	sudo docker ps -aq | xargs --no-run-if-empty docker rm -v
-	sudo docker images -aq | xargs --no--run-if-empty docker rmi -v
-	sudo docker volume ls -q | xargs --no--run-if-empty docker rm
+	sudo docker images -aq | xargs --no-run-if-empty docker rmi -f
 	sudo docker system prune -a --force
 	sudo docker system prune -a -f --volumes
 
-
 re: clean all
+

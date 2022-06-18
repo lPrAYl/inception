@@ -5,7 +5,7 @@ sed -i "s/\#port  /port   /" "/etc/mysql/mariadb.conf.d/50-server.cnf"
 if [ ! -d /var/lib/mysql/wp_db/ ]; then
 service mysql start
 echo "CREATE DATABASE IF NOT EXISTS wp_db;"| mysql -u root
-echo "CREATE USER IF NOT EXISTS 'gtyene'@'%' IDENTIFIED BY '12345';"| mysql -u root
+echo "CREATE USER IF NOT EXISTS 'gtyene'@'%' IDENTIFIED BY '1234';"| mysql -u root
 echo "GRANT ALL PRIVILEGES ON wp_db.* TO 'gtyene'@'%' WITH GRANT OPTION;"| mysql -u root
 echo "FLUSH PRIVILEGES;"| mysql -u root
 mysqladmin -u root password ${DB_PASS}
